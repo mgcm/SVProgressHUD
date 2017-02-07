@@ -114,6 +114,12 @@ static const CGFloat SVProgressHUDLabelSpacing = 8.0f;
 
 #pragma mark - Setters
 
++ (void)setHudViewBorder:(CGFloat)thickness andColor:(UIColor *)color
+{
+    [self sharedView].hudView.layer.borderColor = color.CGColor;
+    [self sharedView].hudView.layer.borderWidth = thickness;
+}
+
 + (void)setStatus:(NSString*)status {
     [[self sharedView] setStatus:status];
 }
